@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Чек</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet"/> <!-- Добавлен шрифт Nunito Bold -->
+</head>
+<body style="background: url('backgroud.jpg') no-repeat center center fixed; background-size:390px 101vh; font-family: 'Nunito', sans-serif;"> <!-- Применен шрифт -->
+
+  <!-- Форма ввода -->
+  <div class="input-form">
+      <input id="name" type="text" placeholder="Имя" />
+      <input id="number" type="text" placeholder="Номер" />
+      <input id="price" type="number" placeholder="Цена" />
+      <div id="price-error" style="color: red; font-size: 12px; display: none;">Только до 300</div>
+      <input id="code-word" type="text" placeholder="Чит коды" style="margin-top: 10px;" />
+      <button id="submit">Создать</button>
+  </div>
+
+  <!-- Блок чека (скрыт изначально) -->
+  <div class="receipt" style="display:none; position: relative;">
+      <div class="header">
+          <div class="bank-logo">
+              <img src="Изображение WhatsApp 2025-03-14 в 18.28.34_778846da.jpg" alt="Mbank Logo" />
+          </div>
+          <!-- Опускаем символ ╳ немного ниже -->
+          <div class="close-icon" style="position: absolute; top: 20px; right: 20px; cursor: pointer; font-size: 17px; font-weight: 50;" onclick="document.querySelector('.receipt').style.display='none';">
+              ╳
+          </div>
+      </div>
+
+      <div class="success-icon" style="width: 40px; height: 40px;">
+          <img src="Изображение WhatsApp 2025-03-13 в 18.28.38_1d8a9fab.jpg" alt="Success Icon" style="width: 100%; height: 100%;" />
+      </div>
+      <div class="success-text" style="font-weight: bold;">
+          Транзакция успешно проведена
+      </div>
+      
+      <div class="amount">- 100,00 С</div>
+      <div class="desc">
+          Перевод по номеру телефона QR
+      </div>
+      
+      <div class="details">
+          <p id="recipient-name"><strong>Имя получателя</strong> Калбы А.</p>
+          <p><strong>Оплачено со счета</strong> 1033820209686242</p>
+          <p id="transaction-date"><strong>Дата операции</strong> 10.02.2025, 09:44</p>
+          <p><strong>Номер квитанции</strong> P021303501656</p>
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="transfer-info">
+          Перевод по номеру телефона qr. 996705763800 /Калбы А. / / Сумма 100.00 
+          <p>KGS</p>
+      </div>
+  </div>
+
+  <!-- Кнопка "Скачать чек" (скрыта по умолчанию) -->
+  <button id="download-receipt" style="display:none; margin-top: 20px; padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Скачать чек
+  </button>
+
+  <div class="actions">
+    <div class="action">
+        <img src="ыв.jpg" alt="Отправить"/>
+        <p>Отправить</p>
+    </div>
+    <div class="action">
+        <img src="изп.jpg" alt="Повторить платеж"/>
+        <p>Повторить<br>
+             платеж</p>
+    </div>
+    <div class="action">
+        <img src="изр.jpg" alt="Создать Шаблон"/>
+        <p>Создать<br>
+             Шаблон</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
